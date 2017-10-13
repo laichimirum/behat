@@ -1,0 +1,12 @@
+selenium-hub:
+  restart: always
+  image: selenium/hub:2.53.0
+  ports:
+    - "4444:4444"
+
+selenium-chrome:
+  restart: always
+  image: selenium/node-chrome:2.53.0
+  stdin_open: true
+  links:
+    - selenium-hub:hub
