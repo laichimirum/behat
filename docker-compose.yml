@@ -10,3 +10,10 @@ selenium-chrome:
   stdin_open: true
   links:
     - selenium-hub:hub
+
+selenium-firefox:
+  restart: always
+  image: selenium/node-firefox:2.53.0
+  stdin_open: true
+  links:
+    - selenium-hub:hub
