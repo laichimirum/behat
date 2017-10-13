@@ -40,8 +40,8 @@ browserstack_mobile:
         default_session: browser_stack
         javascript_session: browser_stack
         browser_stack:
-          username: 'mirumlondon1'
-          access_key: 'iSGp451P5uH2sWubHyUn'
+          username:
+          access_key:
           capabilities:
 #            browser: firefox
 #            browserVersion: 56
@@ -59,8 +59,8 @@ browserstack:
         default_session: browser_stack
         javascript_session: browser_stack
         browser_stack:
-          username: 'mirumlondon1'
-          access_key: 'iSGp451P5uH2sWubHyUn'
+          username:
+          access_key:
           capabilities:
             browser: firefox
             browserVersion: 56
