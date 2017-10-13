@@ -1,0 +1,70 @@
+# behat.yml
+default:
+    extensions:
+        Behat\MinkExtension:
+            base_url: https://en.wikipedia.org/
+            default_session: goutte
+            javascript_session: selenium2
+            goutte: ~
+            selenium2:
+                wd_host: http://localhost:8643/wd/hub
+        Bex\Behat\ScreenshotExtension:
+              image_drivers:
+                local:
+                  screenshot_directory: screenshots
+                  clear_screenshot_directory: true
+
+phantomjs:
+    extensions:
+        Behat\MinkExtension:
+            selenium2:
+                wd_host: http://localhost:8643/wd/hub
+selenium:
+    extensions:
+        Behat\MinkExtension:
+            default_session: selenium2
+            javascript_session: selenium2
+            browser_name: chrome
+            selenium2:
+                wd_host: http://localhost:4444/wd/hub
+                capabilities:
+                  version: ''
+
+
+browserstack_mobile:
+    gherkin:
+      filters:
+        tags: "@mobile"
+    extensions:
+      Behat\MinkExtension:
+        default_session: browser_stack
+        javascript_session: browser_stack
+        browser_stack:
+          username: 'mirumlondon1'
+          access_key: 'iSGp451P5uH2sWubHyUn'
+          capabilities:
+#            browser: firefox
+#            browserVersion: 56
+#            browserstack-tunnel: true
+            platform: ANDROID
+            device: Samsung Galaxy S5
+            browserName: andorid
+
+browserstack:
+    gherkin:
+      filters:
+        tags: "~@mobile"
+    extensions:
+      Behat\MinkExtension:
+        default_session: browser_stack
+        javascript_session: browser_stack
+        browser_stack:
+          username: 'mirumlondon1'
+          access_key: 'iSGp451P5uH2sWubHyUn'
+          capabilities:
+            browser: firefox
+            browserVersion: 56
+            browserstack-tunnel: true
+
+
+
