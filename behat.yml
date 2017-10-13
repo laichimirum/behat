@@ -7,7 +7,7 @@ default:
             javascript_session: selenium2
             goutte: ~
             selenium2:
-                wd_host: http://localhost:8643/wd/hub
+                wd_host: http://localhost:4444/wd/hub
         Bex\Behat\ScreenshotExtension:
               image_drivers:
                 local:
@@ -40,8 +40,8 @@ browserstack_mobile:
         default_session: browser_stack
         javascript_session: browser_stack
         browser_stack:
-          username:
-          access_key:
+         username: 'mirumlondon1'
+         access_key: 'iSGp451P5uH2sWubHyUn'
           capabilities:
 #            browser: firefox
 #            browserVersion: 56
@@ -59,8 +59,8 @@ browserstack:
         default_session: browser_stack
         javascript_session: browser_stack
         browser_stack:
-          username:
-          access_key:
+          username: 'mirumlondon1'
+          access_key: 'iSGp451P5uH2sWubHyUn'
           capabilities:
             browser: firefox
             browserVersion: 56
