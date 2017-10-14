@@ -40,17 +40,14 @@ browserstack_mobile:
         default_session: browser_stack
         javascript_session: browser_stack
         browser_stack:
-         username: 'mirumlondon1'
-         access_key: 'iSGp451P5uH2sWubHyUn'
+          username: 'mirumlondon1'
+          access_key: 'iSGp451P5uH2sWubHyUn'
           capabilities:
-#            browser: firefox
-#            browserVersion: 56
-#            browserstack-tunnel: true
             platform: ANDROID
             device: Samsung Galaxy S5
             browserName: andorid
 
-browserstack:
+browserstack_IE:
     gherkin:
       filters:
         tags: "~@mobile"
@@ -62,9 +59,56 @@ browserstack:
           username: 'mirumlondon1'
           access_key: 'iSGp451P5uH2sWubHyUn'
           capabilities:
-            browser: firefox
-            browserVersion: 56
-            browserstack-tunnel: true
+            os: Windows
+            os_version: 10
+            browser: IE
+            browserVersion: 11
+#            browserstack-tunnel: true
 
+browserstack_Safari:
+    gherkin:
+      filters:
+        tags: "~@mobile"
+    extensions:
+      Behat\MinkExtension:
+        default_session: browser_stack
+        javascript_session: browser_stack
+        browser_stack:
+          username: 'mirumlondon1'
+          access_key: 'iSGp451P5uH2sWubHyUn'
+          capabilities:
+            os: OS X
+            os_version: Sierra
+            browser: Safari
+            browserVersion: 10.1
+#            browserstack-tunnel: true
+
+chrome:
+    gherkin:
+      filters:
+        tags: "~@mobile"
+    extensions:
+        Behat\MinkExtension:
+            default_session: selenium2
+            javascript_session: selenium2
+            browser_name: chrome
+            selenium2:
+                wd_host: http://localhost:4444/wd/hub
+                capabilities:
+                  version: ''
+
+firefox:
+    gherkin:
+      filters:
+        tags: "~@mobile"
+    extensions:
+        Behat\MinkExtension:
+            default_session: selenium2
+            javascript_session: selenium2
+            browser_name: firefox
+            selenium2:
+                wd_host: http://localhost:4444/wd/hub
+                capabilities:
+                  version: ''
 
 
