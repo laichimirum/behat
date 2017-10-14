@@ -14,7 +14,6 @@
   },
   "require": {
     "behat/mink-selenium2-driver": "^1.3@dev",
-    "se/selenium-server-standalone": "dev-master",
     "phpunit/phpunit": "5.7.x-dev",
     "jakoch/phantomjs-installer": "dev-master"
   },
