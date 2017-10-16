@@ -1,4 +1,6 @@
 # behat.yml
+# 2017.10.14
+
 default:
     extensions:
         Behat\MinkExtension:
@@ -8,17 +10,13 @@ default:
             goutte: ~
             selenium2:
                 wd_host: http://localhost:4444/wd/hub
-        Bex\Behat\ScreenshotExtension:
-              image_drivers:
-                local:
-                  screenshot_directory: screenshots
-                  clear_screenshot_directory: true
 
 phantomjs:
     extensions:
         Behat\MinkExtension:
             selenium2:
                 wd_host: http://localhost:8643/wd/hub
+
 selenium:
     extensions:
         Behat\MinkExtension:
@@ -30,8 +28,7 @@ selenium:
                 capabilities:
                   version: ''
 
-
-browserstack_mobile:
+browserstack_Android:
     gherkin:
       filters:
         tags: "@mobile"
@@ -46,6 +43,22 @@ browserstack_mobile:
             platform: ANDROID
             device: Samsung Galaxy S5
             browserName: andorid
+
+browserstack_IOS:
+    gherkin:
+      filters:
+        tags: "@mobile"
+    extensions:
+      Behat\MinkExtension:
+        default_session: browser_stack
+        javascript_session: browser_stack
+        browser_stack:
+          username: 'mirumlondon1'
+          access_key: 'iSGp451P5uH2sWubHyUn'
+          capabilities:
+            platform: MAC
+            device: iPhone 6S Plus
+            browserName: iPhone
 
 browserstack_IE:
     gherkin:
@@ -82,6 +95,7 @@ browserstack_Safari:
             browser: Safari
             browserVersion: 10.1
 #            browserstack-tunnel: true
+            resolution: 1920x1080
 
 chrome:
     gherkin:
